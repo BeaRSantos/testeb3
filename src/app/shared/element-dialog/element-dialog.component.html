@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>{{!isChange ? 'Adicionar nova tarefa': 'Editar tarefa'}}</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Nome da Tarefa</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <!-- <mat-form-field>
+    <mat-label>Data Inicial da Tarefa</mat-label>
+    <input matInput [matDatepicker]="picker1" [(ngModel)]="data.startDate">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Data Final da Tarefa</mat-label>
+    <input matInput [matDatepicker]="picker2" [(ngModel)]="data.finishDate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field> -->
+  <mat-form-field>
+    <mat-label>Descrição da Tarefa</mat-label>
+    <input matInput [(ngModel)]="data.description">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="OnCancel()">Cancelar</button>
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Criar</button>
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+</div>
